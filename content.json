@@ -1,0 +1,62 @@
+{
+  "name": "Joseph",
+  "title": "Joseph — welcome",
+  "hero": {
+    "eyebrow": "For Joseph",
+    "greeting": "Joseph — we have been expecting you.",
+    "paragraph": "Luis introduced you here so you could see what Claude Code can do. Everything on this page was built by an AI in less than a minute. It is also a sandbox you can edit yourself."
+  },
+  "showcase": {
+    "heading": "What Claude Code built for you today",
+    "reveal": {
+      "button": "Claude Code did this",
+      "fact": "This whole page — copy, layout, the little sailboat, the click you just made — was written by Claude Code. It can run shell commands, edit files, and remember context across sessions. It pairs with you the way a senior engineer would, at the speed of typing."
+    },
+    "bio": {
+      "name": "Joseph",
+      "location": "Taipei",
+      "tagline": "Friend of a friend, here to look around."
+    },
+    "docs": {
+      "heading": "Read the docs",
+      "intro": "Worth bookmarking:",
+      "links": [
+        { "label": "Overview", "href": "https://docs.claude.com/en/docs/claude-code/overview" },
+        { "label": "Quickstart", "href": "https://docs.claude.com/en/docs/claude-code/quickstart" },
+        { "label": "Slash commands", "href": "https://docs.claude.com/en/docs/claude-code/slash-commands" },
+        { "label": "Memory", "href": "https://docs.claude.com/en/docs/claude-code/memory" },
+        { "label": "Hooks", "href": "https://docs.claude.com/en/docs/claude-code/hooks" },
+        { "label": "Settings", "href": "https://docs.claude.com/en/docs/claude-code/settings" },
+        { "label": "Agent SDK", "href": "https://docs.claude.com/en/docs/claude-code/sdk" }
+      ]
+    }
+  },
+  "your_turn": {
+    "heading": "Your turn",
+    "intro": "This page is also a sandbox. Two ways to make it yours:",
+    "browser": {
+      "heading": "Edit in the browser",
+      "body": "Open the repo, click any file, click the pencil, save. The site rebuilds itself.",
+      "link_label": "Open the repo on GitHub"
+    },
+    "local": {
+      "heading": "Use Claude Code locally",
+      "body": "Run the three commands below. The third drops you into a Claude Code session inside the project — ask it anything.",
+      "commands": "git clone https://github.com/yuluis/joseph-evercert-site.git\ncd joseph-evercert-site\nclaude",
+      "first_edit": "Try this first: ask claude to change your hero greeting to something you like. It will edit index.html for you."
+    }
+  },
+  "contact": {
+    "heading": "Stay in touch",
+    "items": [
+      { "label": "Lyra on LINE", "value": "(handle TBD — Luis will share in person)" },
+      { "label": "Luis", "value": "(contact TBD — Luis will share in person)" }
+    ]
+  },
+  "footer": {
+    "tagline": "joseph.evercert.io · made for Joseph",
+    "source_label": "view source on GitHub",
+    "source_href": "https://github.com/yuluis/joseph-evercert-site"
+  },
+  "repo_url": "https://github.com/yuluis/joseph-evercert-site"
+}

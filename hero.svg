@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" width="480" height="280" role="img" aria-label="A small sailboat on a sage-and-cream sea">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f3eee5"/>
+      <stop offset="100%" stop-color="#e6dfd0"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a7b59a"/>
+      <stop offset="100%" stop-color="#7a8b6f"/>
+    </linearGradient>
+    <linearGradient id="sail" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffdf9"/>
+      <stop offset="100%" stop-color="#e8eadf"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="480" height="170" fill="url(#sky)"/>
+  <circle cx="380" cy="70" r="32" fill="#fffdf9" opacity="0.85"/>
+
+  <g>
+    <path d="M0,180 Q60,168 120,180 T240,180 T360,180 T480,180 L480,280 L0,280 Z" fill="url(#sea)" opacity="0.95">
+      <animate attributeName="d"
+        values="M0,180 Q60,168 120,180 T240,180 T360,180 T480,180 L480,280 L0,280 Z;
+                M0,180 Q60,192 120,180 T240,180 T360,180 T480,180 L480,280 L0,280 Z;
+                M0,180 Q60,168 120,180 T240,180 T360,180 T480,180 L480,280 L0,280 Z"
+        dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,200 Q80,188 160,200 T320,200 T480,200 L480,280 L0,280 Z" fill="#7a8b6f" opacity="0.55">
+      <animate attributeName="d"
+        values="M0,200 Q80,188 160,200 T320,200 T480,200 L480,280 L0,280 Z;
+                M0,200 Q80,212 160,200 T320,200 T480,200 L480,280 L0,280 Z;
+                M0,200 Q80,188 160,200 T320,200 T480,200 L480,280 L0,280 Z"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g transform="translate(210, 70)">
+    <line x1="35" y1="0" x2="35" y2="115" stroke="#2c2a26" stroke-width="2"/>
+    <path d="M35,5 L75,105 L35,105 Z" fill="url(#sail)" stroke="#6f6a62" stroke-width="1"/>
+    <path d="M35,15 L8,105 L35,105 Z" fill="url(#sail)" stroke="#6f6a62" stroke-width="1" opacity="0.9"/>
+    <path d="M0,115 Q35,135 70,115 L62,128 L8,128 Z" fill="#3b3833"/>
+  </g>
+</svg>

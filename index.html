@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Joseph — welcome</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+
+    <section class="hero card">
+      <figure class="hero-figure">
+        <img src="hero.svg" alt="A small sailboat on a sage-and-cream sea" />
+      </figure>
+      <p class="eyebrow" id="hero-eyebrow">For Joseph</p>
+      <h1 id="hero-greeting">…</h1>
+      <p class="lede" id="hero-paragraph">…</p>
+    </section>
+
+    <section class="showcase">
+      <h2 id="showcase-heading">…</h2>
+
+      <article class="card reveal-card">
+        <button type="button" id="reveal-button" class="reveal-button">…</button>
+        <p id="reveal-fact" class="reveal-fact" hidden>…</p>
+      </article>
+
+      <article class="card bio-card">
+        <p class="bio-name" id="bio-name">…</p>
+        <p class="bio-location" id="bio-location">…</p>
+        <p class="bio-tagline" id="bio-tagline">…</p>
+      </article>
+
+      <article class="card docs-card">
+        <h3 id="docs-heading">…</h3>
+        <p class="muted" id="docs-intro">…</p>
+        <ul class="docs-list" id="docs-list"></ul>
+      </article>
+    </section>
+
+    <section class="your-turn card">
+      <h2 id="yt-heading">…</h2>
+      <p class="muted" id="yt-intro">…</p>
+
+      <div class="yt-block">
+        <h3 id="yt-browser-heading">…</h3>
+        <p id="yt-browser-body">…</p>
+        <p><a id="yt-browser-link" class="link" target="_blank" rel="noopener">…</a></p>
+      </div>
+
+      <div class="yt-block">
+        <h3 id="yt-local-heading">…</h3>
+        <p id="yt-local-body">…</p>
+        <pre class="code" id="yt-local-commands">…</pre>
+        <p class="muted" id="yt-first-edit">…</p>
+      </div>
+    </section>
+
+    <section class="contact card">
+      <h2 id="contact-heading">…</h2>
+      <ul class="contact-list" id="contact-list"></ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <span id="footer-tagline">…</span>
+      ·
+      <a id="footer-source-link" class="link" target="_blank" rel="noopener">…</a>
+    </p>
+  </footer>
+
+  <script>
+    (async () => {
+      const $ = (id) => document.getElementById(id);
+      try {
+        const c = await (await fetch("content.json", { cache: "no-store" })).json();
+        document.title = c.title || "Joseph — welcome";
+
+        $("hero-eyebrow").textContent = c.hero?.eyebrow || "";
+        $("hero-greeting").textContent = c.hero?.greeting || "";
+        $("hero-paragraph").textContent = c.hero?.paragraph || "";
+
+        $("showcase-heading").textContent = c.showcase?.heading || "";
+
+        const btn = $("reveal-button");
+        const factEl = $("reveal-fact");
+        btn.textContent = c.showcase?.reveal?.button || "Reveal";
+        factEl.textContent = c.showcase?.reveal?.fact || "";
+        btn.addEventListener("click", () => {
+          const showing = !factEl.hasAttribute("hidden");
+          if (showing) {
+            factEl.setAttribute("hidden", "");
+            btn.textContent = c.showcase?.reveal?.button || "Reveal";
+          } else {
+            factEl.removeAttribute("hidden");
+            btn.textContent = "↑ hide";
+          }
+        });
+
+        $("bio-name").textContent = c.showcase?.bio?.name || "";
+        $("bio-location").textContent = c.showcase?.bio?.location || "";
+        $("bio-tagline").textContent = c.showcase?.bio?.tagline || "";
+
+        $("docs-heading").textContent = c.showcase?.docs?.heading || "";
+        $("docs-intro").textContent = c.showcase?.docs?.intro || "";
+        const docsList = $("docs-list");
+        (c.showcase?.docs?.links || []).forEach((link) => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = link.href;
+          a.textContent = link.label;
+          a.className = "link";
+          a.target = "_blank";
+          a.rel = "noopener";
+          li.appendChild(a);
+          docsList.appendChild(li);
+        });
+
+        $("yt-heading").textContent = c.your_turn?.heading || "";
+        $("yt-intro").textContent = c.your_turn?.intro || "";
+        $("yt-browser-heading").textContent = c.your_turn?.browser?.heading || "";
+        $("yt-browser-body").textContent = c.your_turn?.browser?.body || "";
+        const browserLink = $("yt-browser-link");
+        browserLink.href = c.repo_url || "#";
+        browserLink.textContent = c.your_turn?.browser?.link_label || "Open on GitHub";
+        $("yt-local-heading").textContent = c.your_turn?.local?.heading || "";
+        $("yt-local-body").textContent = c.your_turn?.local?.body || "";
+        $("yt-local-commands").textContent = c.your_turn?.local?.commands || "";
+        $("yt-first-edit").textContent = c.your_turn?.local?.first_edit || "";
+
+        $("contact-heading").textContent = c.contact?.heading || "";
+        const contactList = $("contact-list");
+        (c.contact?.items || []).forEach((item) => {
+          const li = document.createElement("li");
+          const strong = document.createElement("strong");
+          strong.textContent = item.label + ": ";
+          li.appendChild(strong);
+          li.appendChild(document.createTextNode(item.value));
+          contactList.appendChild(li);
+        });
+
+        $("footer-tagline").textContent = c.footer?.tagline || "";
+        const sourceLink = $("footer-source-link");
+        sourceLink.href = c.footer?.source_href || c.repo_url || "#";
+        sourceLink.textContent = c.footer?.source_label || "view source on GitHub";
+      } catch (e) {
+        console.error("content.json failed to load", e);
+      }
+    })();
+  </script>
+</body>
+</html>
