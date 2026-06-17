@@ -1,6 +1,6 @@
-# joseph-evercert-site
+# joseph-evercert-tw-lyra
 
-A small welcome page Claude Code built for Joseph. Lives at **[joseph.evercert.io](https://joseph.evercert.io)**.
+A small welcome page Claude Code built for Joseph. Lives at **[evercert.tw/lyra/joseph](https://evercert.tw/lyra/joseph/)**.
 
 It is also a sandbox. Joseph is meant to edit it.
 
@@ -29,8 +29,8 @@ The live site picks it up the next time the deploy runs.
 ## Edit locally with Claude Code
 
 ```bash
-git clone https://github.com/yuluis/joseph-evercert-site.git
-cd joseph-evercert-site
+git clone https://github.com/yuluis/joseph-evercert-tw-lyra.git
+cd joseph-evercert-tw-lyra
 claude
 ```
 
@@ -38,15 +38,15 @@ That last command drops you into a Claude Code session inside the project. Ask i
 
 ## Deploy
 
-The live site is served by nginx on a single vps from `/var/www/joseph.evercert.io/`, which is a git clone of this repo.
+The live site is served by nginx on a single vps as a static subdirectory of `evercert.tw`. The path on disk is `/var/www/evercert-tw-landing/lyra/joseph/`, which is a git clone of this repo. Static files win over the React SPA fallback above, so no nginx config change is needed.
 
 To redeploy after pushing here:
 
 ```bash
-ssh vps "cd /var/www/joseph.evercert.io && sudo git pull && sudo systemctl reload nginx"
+ssh vps "cd /var/www/evercert-tw-landing/lyra/joseph && git pull"
 ```
 
-That's the whole deploy story.
+No nginx reload required.
 
 ## License
 

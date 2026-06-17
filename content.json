@@ -42,7 +42,7 @@
     "local": {
       "heading": "Use Claude Code locally",
       "body": "Run the three commands below. The third drops you into a Claude Code session inside the project — ask it anything.",
-      "commands": "git clone https://github.com/yuluis/joseph-evercert-site.git\ncd joseph-evercert-site\nclaude",
+      "commands": "git clone https://github.com/yuluis/joseph-evercert-tw-lyra.git\ncd joseph-evercert-tw-lyra\nclaude",
       "first_edit": "Try this first: ask claude to change your hero greeting to something you like. It will edit index.html for you."
     }
   },
@@ -54,9 +54,9 @@
     ]
   },
   "footer": {
-    "tagline": "joseph.evercert.io · made for Joseph",
+    "tagline": "evercert.tw/lyra/joseph · made for Joseph",
     "source_label": "view source on GitHub",
-    "source_href": "https://github.com/yuluis/joseph-evercert-site"
+    "source_href": "https://github.com/yuluis/joseph-evercert-tw-lyra"
   },
-  "repo_url": "https://github.com/yuluis/joseph-evercert-site"
+  "repo_url": "https://github.com/yuluis/joseph-evercert-tw-lyra"
 }
